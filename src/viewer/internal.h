@@ -257,8 +257,7 @@ void coord_cache_free (coord_cache_t * cache);
 void mcview_ccache_dump (WView * view);
 #endif
 
-void mcview_ccache_lookup (WView * view, coord_cache_entry_t * coord,
-                           enum ccache_type lookup_what);
+void mcview_ccache_lookup (WView * view, coord_cache_entry_t * coord, enum ccache_type lookup_what);
 
 /* datasource.c: */
 void mcview_set_datasource_none (WView *);

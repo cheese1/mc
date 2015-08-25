@@ -394,8 +394,7 @@ mcview_get_next_char (WView * view, mcview_state_machine_t * state, int *c)
  * color can be null if the caller doesn't care.
  */
 static gboolean
-mcview_get_next_maybe_nroff_char (WView * view, mcview_state_machine_t * state, int *c,
-                                  int *color)
+mcview_get_next_maybe_nroff_char (WView * view, mcview_state_machine_t * state, int *c, int *color)
 {
     mcview_state_machine_t state_after_nroff;
     int c2, c3;
