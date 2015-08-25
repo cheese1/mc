@@ -393,18 +393,18 @@ str_utf8_length_noncomb (const char *text)
 
 /* --------------------------------------------------------------------------------------------- */
 
-/*
+#if 0
 static void
 str_utf8_questmark_sustb (char **string, size_t * left, GString * buffer)
 {
-   char *next;
+    char *next;
 
-   next = g_utf8_next_char (*string);
-   (*left) -= next - (*string);
-   (*string) = next;
-   g_string_append_c (buffer, '?');
+    next = g_utf8_next_char (*string);
+    (*left) -= next - (*string);
+    (*string) = next;
+    g_string_append_c (buffer, '?');
 }
-*/
+#endif
 
 /* --------------------------------------------------------------------------------------------- */
 
