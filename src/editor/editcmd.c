@@ -3581,6 +3581,7 @@ edit_suggest_current_word (WEdit * edit)
     {
         GArray *suggest;
         unsigned int res;
+        guint i;
 
         suggest = g_array_new (TRUE, FALSE, sizeof (char *));
 
@@ -3600,7 +3601,6 @@ edit_suggest_current_word (WEdit * edit)
 
             if (retval == B_ENTER && new_word != NULL)
             {
-                guint i;
                 char *cp_word;
 
 #ifdef HAVE_CHARSET
@@ -3625,6 +3625,14 @@ edit_suggest_current_word (WEdit * edit)
                 aspell_add_to_dict (match_word->str, (int) word_len);
         }
 
+
+        for (i = 0; i < suggest->len; i++)
+        {
+            char *cur_sugg_word;
+
+            cur_sugg_word = g_array_index (suggest, char *, i);
+            g_free (cur_sugg_word);
+        }
         g_array_free (suggest, TRUE);
         edit->found_start = 0;
         edit->found_len = 0;
